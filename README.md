@@ -1,11 +1,70 @@
-# React + TypeScript + Vite
+# BigGeek Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Клон главной страницы и улучшение интернет-магазина BigGeek.ru, разработанный с использованием React, TypeScript и SCSS.
 
-Currently, two official plugins are available:
+## Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- SCSS
+- Vite
+
+## Требования
+
+- Node.js версии 16 или выше
+- npm или yarn
+
+## Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/davidkhan4747/tz-biggeek.git
+cd tz-biggeek
+```
+
+2. Установите зависимости:
+```bash
+npm install
+# или
+yarn install
+```
+
+## Запуск приложения
+
+1. Запуск в режиме разработки:
+```bash
+npm run dev
+# или
+yarn dev
+```
+Приложение будет доступно по адресу: http://localhost:5173
+
+2. Сборка для продакшена:
+```bash
+npm run build
+# или
+yarn build
+```
+
+## Функциональность
+
+- Просмотр категорий товаров
+- Карточки товаров с информацией о цене, скидках и рейтинге
+- Адаптивный дизайн для мобильных устройств
+- Корзина покупок
+
+## Структура проекта
+
+```
+src/
+├── assets/         # Изображения и статические файлы
+├── components/     # React компоненты
+├── styles/         # Глобальные стили
+└── App.tsx         # Главный компонент приложения
+```
+
+## Автор
+
+DavidKhan - [GitHub](https://github.com/davidkhan4747)
 
 ## Expanding the ESLint configuration
 

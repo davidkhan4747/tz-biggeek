@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.main {
+  min-height: calc(100vh - 160px);
+} // Space for fixed header

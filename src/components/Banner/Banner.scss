@@ -1,0 +1,214 @@
+.banner {
+  background: linear-gradient(to right, #f5f5f7 50%, #fff 50%);
+  padding-top: 40px;
+  overflow: hidden;
+
+  @media (max-width: 991px) {
+    background: #f5f5f7;
+  }
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 500px;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      text-align: center;
+      min-height: auto;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 12px 32px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    max-width: 500px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.6s ease forwards;
+
+    @media (max-width: 991px) {
+      max-width: none;
+      margin-bottom: 40px;
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1d1d1f;
+    margin: 0 0 32px;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: #623e63;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    &:hover {
+      background: darken(#623e63, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(98, 62, 99, 0.2);
+
+      &::before {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    max-width: 600px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.3s forwards;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+      transform-origin: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @media (max-width: 991px) {
+      position: static;
+      transform: none;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+      max-width: 300px;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  &__categories {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e7;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 80px;
+      background: linear-gradient(to right, rgba(255,255,255,0), #fff);
+      pointer-events: none;
+
+      @media (max-width: 767px) {
+        width: 40px;
+      }
+    }
+  }
+
+  &__categories-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 60px;
+    
+    @media (max-width: 767px) {
+      padding: 0 12px;
+      gap: 16px;
+      height: 50px;
+    }
+  }
+
+  &__category {
+    color: #1d1d1f;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #623e63;
+    }
+  }
+}
